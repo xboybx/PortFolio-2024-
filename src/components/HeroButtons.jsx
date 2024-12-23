@@ -1,16 +1,17 @@
 import { ArrowRight, FileDown } from 'lucide-react';
-
 export function HeroButtons({ onNavigate }) {
   const handleDownloadResume = () => {
     // Create a dummy PDF URL (replace with actual resume URL in production)
-    const dummyPdfUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
-    
+    // const dummyPdfUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    const dummyPdfUrl = './Jaswanth-2024-Resume.pdf';
+
+
     // Create a temporary link element
     const link = document.createElement('a');
     link.href = dummyPdfUrl;
-    link.download = 'resume.pdf'; // Suggested filename
+    link.download = 'Jaswanth-2024-Resume.pdf'; // Suggested filename
     link.target = '_blank';
-    
+
     // Trigger the download
     document.body.appendChild(link);
     link.click();
@@ -26,7 +27,7 @@ export function HeroButtons({ onNavigate }) {
         <FileDown className="w-4 h-4" />
         <span>Resume</span>
       </button>
-      
+
       <button
         onClick={() => onNavigate('projects')}
         className="btn-primary flex items-center gap-2"
